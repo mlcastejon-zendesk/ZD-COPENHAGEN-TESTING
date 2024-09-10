@@ -1,3 +1,8 @@
+# Copenhagen Theme for Testing
+
+This theme is for training and learning purposes.
+
+
 # Copenhagen Theme by Zendesk
 
 The Copenhagen theme is the default Zendesk Guide theme. It is designed to be responsive and accessible.
