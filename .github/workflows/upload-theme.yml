@@ -3,7 +3,7 @@ name: Upload Theme
 on:
   push:
     branches:
-      - main # Adjust the branches as needed
+      - test-training
   workflow_dispatch:
 
 jobs:
