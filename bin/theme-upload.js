@@ -1,5 +1,6 @@
 /* eslint-env node */
-const brandId = process.env.BRAND_ID;
+const brandId = '360002685798';
+//const brandId = process.env.BRAND_ID;
 const { execSync } = require("child_process");
 
 function zcli(command) {

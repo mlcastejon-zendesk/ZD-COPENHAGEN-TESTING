@@ -1,10 +1,9 @@
-Copy code
 name: Upload Theme
 
 on:
   push:
-    branches: 
-      - main  # Adjust the branches as needed
+    branches:
+      - main # Adjust the branches as needed
   workflow_dispatch:
 
 jobs:
@@ -12,21 +11,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18.12.1'  
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.12.1'
 
-    - name: Install dependencies
-      run: yarn install
+      - name: Install dependencies
+        run: yarn install
 
-    - name: Upload theme
-      env:
-        ZENDESK_EMAIL: ${{ secrets.zendesk_email }}
-        ZENDESK_TOKEN: ${{ secrets.zendesk_token }}
-        SUBDOMAIN: ${{ secrets.subdomain }}
-        BRAND_ID: ${{ secrets.brand_id }}
-      run: node ./bin/theme-upload.js
+      - name: Upload theme
+        env:
+          ZENDESK_EMAIL: ${{ secrets.zendesk_email }}
+          ZENDESK_TOKEN: ${{ secrets.zendesk_token }}
+          SUBDOMAIN: ${{ secrets.subdomain }}
+          BRAND_ID: ${{ secrets.brand_id }}
+        run: node ./bin/theme-upload.js
