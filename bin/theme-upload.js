@@ -1,7 +1,8 @@
 /* eslint-env node */
-const brandId = '360002685798';
-//const brandId = process.env.BRAND_ID;
+const brandId = process.env.BRAND_ID;
 const { execSync } = require("child_process");
+
+console.log("Uploading theme for brandId", brandId);
 
 function zcli(command) {
   const data = execSync(`yarn --silent zcli ${command} --json`);
