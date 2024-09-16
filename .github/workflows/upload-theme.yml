@@ -21,7 +21,17 @@ jobs:
           check-latest: true
 
       - name: Install dependencies
-        run: yarn install
+        run: |
+          yarn install
+
+      - name: Check for yarn.lock file # Debug step for checking yarn.lock file presence
+        run: |
+          if [ ! -f yarn.lock ]; then
+            echo "yarn.lock file not found!"
+            exit 1
+          else
+            echo "yarn.lock file found."
+          fi
 
       - name: Upload theme
         env:
@@ -29,4 +39,6 @@ jobs:
           ZENDESK_TOKEN: ${{ secrets.zendesk_token }}
           SUBDOMAIN: ${{ secrets.subdomain }}
           BRAND_ID: ${{ secrets.brand_id }}
-        run: node ./bin/theme-upload.js
+        run: |
+          echo "Running theme upload script..."
+          node ./bin/theme-upload.js
